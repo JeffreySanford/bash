@@ -3,13 +3,13 @@
     <h3>BASH</h3>
   </div>
   <div class="header-objects left" [matMenuTriggerFor]="menu">
-    <button mat-icon-button>
+    <button class="mat-elevation-z4" mat-icon-button>
       <span class="fa fa-plane" size="2x"></span>
     </button>
 
     <mat-menu class="mat-elevation-z8 menu-overlay" #menu="matMenu">
       <a *ngFor="let link of links">
-        <button mat-menu-item [routerLink]="[link]">
+        <button class="mat-elevation-z4" mat-menu-item [routerLink]="[link]">
           <span class="fa fa-plane" size="2x"></span>
           {{ link }}
         </button>
@@ -17,10 +17,11 @@
     </mat-menu>
   </div>
   <div class="header-objects right" [matMenuTriggerFor]="userMenu">
-    <span>{{ firstName }}</span>
-    <button mat-icon-button>
-      <span class="fa fa-badge" size="2x"></span>
+    <button class="mat-elevation-z4" mat-icon-button>
+      <span class="fa fa-user" size="2x"></span>
     </button>
+    <br>
+    <span>{{ firstName }}</span>
 
     <mat-menu #userMenu="matMenu">
       <a *ngFor="let userLink of userLinks">
@@ -34,7 +35,7 @@
 </div>
 
 
-<div style="margin-top: 0em;" class="container view" [@slideInLeft]>
+<div style="margin-top: 1.5em;" class="container view" [@slideInLeft]>
   <div class="row">
     <div id="where-to" class="col-md-4" style="margin-left: -2em;">
       <div>
@@ -47,7 +48,7 @@
                   <i class="fa fa-user"></i>
                   <p class="id-for-icon">{{ guest.id }}</p>
                 </div>
-                <div class="button-label mat-elevation-z8">{{ guest.name }}</div>
+                <div class="button-label mat-elevation-z4">{{ guest.name }}</div>
               </a>
             </li>
           </ul>
@@ -57,46 +58,45 @@
             <p style="font-size: .8em;" class="show content-descriptor">Guides for interest and location</p>
             <li class="col-md-3 pull-left" *ngFor="let guide of guides; let i = index;">
               <a routerLink="/guide/{{guide.id}}">
-                <div class="btn-circle">
+                <div class="btn-circle mat-elevation-z8">
                   <i class="fa fa-user"></i>
                   <p class="id-for-icon">{{ guide.id }}</p>
                 </div>
-                <div class="button-label">{{ guide.name }}</div>
+                <div class="button-label mat-elevation-z4">{{ guide.name }}</div>
               </a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 mat-elevation-z8">
       <p id="where-to" style="font-size: 1.1em;">Where would you like to visit?</p>
       <app-agm>loading</app-agm>
     </div>
 
-    <div class="col-md-2" style="margin: 5em 0 0 3em;border: 1px solid magenta;width: 20% important!;">
+    <div class="col-md-2 user-interests">
       
       <div class="checkboxes">
-        <label class="interets" [class.selected]="tourism.checked">
+        <label class="interets form-check-label mat-elevation-z2" [class.selected]="tourism.checked">
           <input #tourism type="checkbox" value="tourism" (change)="logCheckbox(tourism)">
           <span class="fa fa-bus">&nbsp;Tourism</span>
         </label>
 
-        <label class="interets" [class.selected]="food.checked">
+        <label class="interets form-check-label mat-elevation-z2" [class.selected]="food.checked">
           <input #food type="checkbox" value="food" (change)="logCheckbox(food)">
           <span class="fa fa-fork-awesome">&nbsp;food</span>
         </label>
 
-        <label class="interets" [class.selected]="accomodations.checked">
+        <label class="interets form-check-label mat-elevation-z2" [class.selected]="accomodations.checked">
           <input #accomodations type="checkbox" value="accomodations" (change)="logCheckbox(accomodations)">
           <span class="fa fa-bed">&nbsp;Accomodations</span>
         </label>
 
-        <label class="interets" [class.selected]="dynamic.checked">
+        <label class="interets form-check-label mat-elevation-z2" [class.selected]="dynamic.checked">
           <input #dynamic type="checkbox" value="dynamic" (change)="logCheckbox(dynamic)">
           <span class="fa fa-gift">&nbsp;Dynamic</span>
         </label>
       </div>
-      <div>{{ log }}</div>
 
       <!-- <app-messages></app-messages> -->
     </div>

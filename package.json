@@ -10,7 +10,9 @@
     "start": "webpack-dev-server --mode development --open"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "hammerjs": "^2.0.8"
+  },
   "devDependencies": {
     "@agm/core": "^1.0.0-beta.3",
     "@angular/animations": "^6.1.1",

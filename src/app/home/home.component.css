@@ -64,7 +64,8 @@ ul {
 }
 
 .form-check-label {
-  margin-right: 1em;
+  width: 10em;
+  margin: .25em 1em;
 }
 
 
