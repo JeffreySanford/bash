@@ -1,10 +1,104 @@
-﻿<h1>Hi {{currentUser.firstName}}!</h1>
-<p>You're logged in with Angular 6!!</p>
-<h3>All registered users:</h3>
-<ul>
-    <li *ngFor="let user of users">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </li>
-</ul>
-<p><a [routerLink]="['/login']">Logout</a></p>
+﻿<div class="container app-loading">
+  <div class="header-objects center" center><h3>My Favorite Places</h3></div>
+  <div class="header-objects left fa fa-plane" [matMenuTriggerFor]="menu">
+    <button mat-icon-button>
+      <span class="fa fa-plane" size="2x"></span>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <a *ngFor="let link of links">
+        <button mat-menu-item [routerLink]="[link]">
+          <span class="fa fa-plane" size="2x"></span>
+          {{ link }}
+        </button>
+      </a>
+      {{ users }}
+    </mat-menu>
+  </div>
+  <div class="header-objects right" [matMenuTriggerFor]="userMenu">
+    <span>{{ firstName }}</span>
+    <button mat-icon-button>
+      <span class="fa fa-badge" size="2x"></span>
+    </button>
+
+    <mat-menu #userMenu="matMenu">
+      <a *ngFor="let userLink of userLinks">
+        <button mat-menu-item [routerLink]="[userLink]">
+          <span class="fa fa-plane" size="2x"></span>
+          {{ userLink }}
+        </button>
+      </a>
+    </mat-menu>
+  </div>
+</div>
+
+
+<div class="container view" [@slideInLeft]>
+  <div class="row">
+    <div id="where-to" class="col-md-6" style="">
+      <div>
+        <div class="row">
+          <ul style="">
+            <p class="show guests" class="content-descriptor">Here's people looking to travel with similar interests.</p>
+            <li class="col-md-4 pull-left" *ngFor="let guest of guests; let i = index;">
+              <a routerLink="/guest/{{guest.id}}">
+                <div class="btn-circle">
+                  <i class="fa fa-user"></i>
+                  <p>{{ guest.name }}</p>
+                  <p class="id-for-icon">{{ guest.id }}</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul style="margin-top: 0;">
+            <p class="show" class="content-descriptor">Here's people that want to show you their city.</p>
+            <li class="col-md-4 pull-left" *ngFor="let guide of guides; let i = index;">
+              <a routerLink="/guide/{{guide.id}}">
+                <div class="btn-circle">
+                  <i class="fa fa-user"></i>
+                  <p>{{ guide.name }}</p>
+                  <p class="id-for-icon">{{ guide.id }}</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <p id="where-to" style="font-size: 1.1em;">Where would you like to visit?</p>
+      <app-agm>loading</app-agm>
+    </div>
+
+    <div class="col-md-2">
+      <div class="col-md-3">
+        <div style="margin-top: 0;margin-left: 0em;">
+          <div class="checkboxes">
+            <label class="interets" [class.selected]="tourism.checked">
+              <input #tourism type="checkbox" value="tourism" (change)="logCheckbox(tourism)">
+              <span class="fa fa-bus">&nbsp;Tourism</span>
+            </label>
+
+            <label class="interets" [class.selected]="food.checked">
+              <input #food type="checkbox" value="food" (change)="logCheckbox(food)">
+              <span class="fa fa-cutlery">&nbsp;food</span>
+            </label>
+
+            <label class="interets" [class.selected]="accomodations.checked">
+              <input #accomodations type="checkbox" value="accomodations" (change)="logCheckbox(accomodations)">
+              <span class="fa fa-bed">&nbsp;Accomodations</span>
+            </label>
+
+            <label class="interets" [class.selected]="dynamic.checked">
+              <input #dynamic type="checkbox" value="dynamic" (change)="logCheckbox(dynamic)">
+              <span class="fa fa-gift">&nbsp;Dynamic</span>
+            </label>
+          </div>
+          <div>{{ log }}</div>
+        </div>
+      </div>
+      <!-- <app-messages></app-messages> -->
+    </div>
+  </div>

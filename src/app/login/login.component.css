@@ -1,0 +1,16 @@
+form {
+    background-color: white;
+    border: 1px solid red;
+    margin: 1em;
+    padding: 1em;
+    font-size: 1.5em;
+    margin-top: 4em;
+}
+
+.dialog {
+    margin: 0 auto;
+    width: 75%;
+    border-radius: 10px;
+    background-color: fuchsia;
+}
+

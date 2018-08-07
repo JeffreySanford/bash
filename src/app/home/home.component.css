@@ -1,0 +1,170 @@
+.container {
+  margin-top: 3em;
+}
+.view {
+  width: 100%;
+  border: 1px solid blue;
+  padding-top: 3em;
+}
+
+.header-objects {
+  position: fixed;
+  top: 1em;
+  z-index: 5;
+}
+
+.left{
+  left: 1em !important;
+}
+
+.right {
+  right: 1em !important;
+}
+
+.app-loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.show {
+  font-size: 0.7em;
+  float: left;
+}
+
+.content-descriptor {
+  margin-top: 1em;
+  font-size: 1em;
+  color: purple;
+}
+
+ul {
+  list-style: none;
+  margin-top: -2em;
+}
+
+#where-to {
+  color: purple;
+  font-size: 1.5em;
+  float: left;
+  left: -1em;
+}
+
+.form-check-input {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.form-check-label {
+  margin-right: 1em;
+}
+
+
+.checkboxes input[type="checkbox"] {
+  display: none;
+}
+
+.checkboxes .selected {
+  border: 1.5px solid green;
+  background-color: white;
+  border-radius: 10px;
+  color: green;
+}
+
+/* #checkboxes input[type=checkbox]:checked + .whatever{
+    border: 1.5px solid green;
+    background-color: white;
+    border-radius: 10px;
+    color: green;
+  } */
+
+.pull-left {
+  float: left;
+}
+
+.btn-circle {
+  border: 1px solid purple;
+  border-radius: 50%;
+  width: 3.5em !important;
+  height: 3.5em !important;
+  margin-bottom: 0.5em;
+  background-color: magenta;
+  display: inline-block;
+  width: 10em;
+  height: 3em;
+  padding: 0.1em 0.5em;
+  color: white;
+  font-size: 1em;
+}
+
+.btn-circle p {
+  color: darkred;
+  font-size: 0.6em;
+  text-align: center;
+  margin: -5em auto 0;
+  line-height: 1em;
+}
+
+.btn-circle i {
+  font-size: 2.75em;
+  margin: 0 21%;
+  text-align: center;
+  color: rgba(255, 0, 0, 0.2);
+}
+
+.btn-circle .id-for-icon {
+  font-size: 0.5em;
+  margin-top: -3em;
+  color: black;
+}
+
+.app-loading .spinner {
+  height: 200px;
+  width: 200px;
+  animation: rotate 2s linear infinite;
+  transform-origin: center center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.app-loading .spinner .path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke: #ddd;
+}
+
+.footer p {
+  position: fixed;
+  bottom: 0.5em;
+  right: 5em;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}

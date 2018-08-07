@@ -5,7 +5,10 @@ import { first } from 'rxjs/operators';
 
 import { AlertService, AuthenticationService } from '../_services';
 
-@Component({templateUrl: 'login.component.html'})
+@Component({
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
+})
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
@@ -40,6 +43,8 @@ export class LoginComponent implements OnInit {
 
         // stop here if form is invalid
         if (this.loginForm.invalid) {
+            alert('Error.  Username is '+ this.f.username + ' and password is ' + this.f.password);
+
             return;
         }
 
@@ -49,6 +54,7 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.router.navigate([this.returnUrl]);
+                    this.alertService.success(this.f.username.value + ' has logged in.' );
                 },
                 error => {
                     this.alertService.error(error);
