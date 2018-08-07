@@ -1,12 +1,12 @@
 <!-- Brian puts the love in Angular: http://brianflove.com/2016/10/18/angular-2-google-maps-places-autocomplete/ -->
 <div class="form-group" style="position: relative;width: 100%;margin: 1em auto 2em;">
-  <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control mat-elevation-z2"
+  <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control mat-elevation-z4"
     id="search" [formControl]="searchControl">
 </div>
 
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<agm-map class="mat-elevation-z1" [latitude]="latitude" [longitude]="longitude">
+<agm-map class="mat-elevation-z8" [latitude]="latitude" [longitude]="longitude">
   <agm-marker [latitude]="latitude" [longitude]="longitude" (markerClick)="markerClick()">
   </agm-marker>
 </agm-map>
