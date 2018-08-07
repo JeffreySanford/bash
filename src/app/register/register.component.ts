@@ -5,7 +5,10 @@ import { first } from 'rxjs/operators';
 
 import { AlertService, UserService } from '../_services';
 
-@Component({templateUrl: 'register.component.html'})
+@Component({
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.css']
+})
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
@@ -24,6 +27,8 @@ export class RegisterComponent implements OnInit {
             username: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });
+
+        const registerForm = this.registerForm;
     }
 
     // convenience getter for easy access to form fields
