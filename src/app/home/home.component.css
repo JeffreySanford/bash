@@ -111,6 +111,7 @@ ul {
   border: 1px solid magenta;
   font-size:.4em;
   color:black;
+  margin-bottom: 1em;
 }
 
 .btn-circle p {
