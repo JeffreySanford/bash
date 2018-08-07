@@ -68,38 +68,36 @@
         </div>
       </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
       <p id="where-to" style="font-size: 1.1em;">Where would you like to visit?</p>
       <app-agm>loading</app-agm>
     </div>
 
-    <div class="col-md-2">
-      <div class="col-md-3">
-        <div style="margin-top: 0;margin-left: 0em;">
-          <div class="checkboxes">
-            <label class="interets" [class.selected]="tourism.checked">
-              <input #tourism type="checkbox" value="tourism" (change)="logCheckbox(tourism)">
-              <span class="fa fa-bus">&nbsp;Tourism</span>
-            </label>
+    <div class="col-md-1" style="margin: 5em 0 0 3em;border: 1px solid magenta;width: 10em;">
+      
+      <div class="checkboxes">
+        <label class="interets" [class.selected]="tourism.checked">
+          <input #tourism type="checkbox" value="tourism" (change)="logCheckbox(tourism)">
+          <span class="fa fa-bus">&nbsp;Tourism</span>
+        </label>
 
-            <label class="interets" [class.selected]="food.checked">
-              <input #food type="checkbox" value="food" (change)="logCheckbox(food)">
-              <span class="fa fa-cutlery">&nbsp;food</span>
-            </label>
+        <label class="interets" [class.selected]="food.checked">
+          <input #food type="checkbox" value="food" (change)="logCheckbox(food)">
+          <span class="fa fa-icon-food">&nbsp;food</span>
+        </label>
 
-            <label class="interets" [class.selected]="accomodations.checked">
-              <input #accomodations type="checkbox" value="accomodations" (change)="logCheckbox(accomodations)">
-              <span class="fa fa-bed">&nbsp;Accomodations</span>
-            </label>
+        <label class="interets" [class.selected]="accomodations.checked">
+          <input #accomodations type="checkbox" value="accomodations" (change)="logCheckbox(accomodations)">
+          <span class="fa fa-bed">&nbsp;Accomodations</span>
+        </label>
 
-            <label class="interets" [class.selected]="dynamic.checked">
-              <input #dynamic type="checkbox" value="dynamic" (change)="logCheckbox(dynamic)">
-              <span class="fa fa-gift">&nbsp;Dynamic</span>
-            </label>
-          </div>
-          <div>{{ log }}</div>
-        </div>
+        <label class="interets" [class.selected]="dynamic.checked">
+          <input #dynamic type="checkbox" value="dynamic" (change)="logCheckbox(dynamic)">
+          <span class="fa fa-gift">&nbsp;Dynamic</span>
+        </label>
       </div>
+      <div>{{ log }}</div>
+
       <!-- <app-messages></app-messages> -->
     </div>
   </div>

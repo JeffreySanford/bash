@@ -2,7 +2,7 @@
 import { first } from "rxjs/operators";
 
 import { User } from "../_models";
-import { UserService } from "../_services";
+import { UserService, AlertService } from "../_services";
 
 import {
   trigger,
@@ -62,12 +62,14 @@ export class HomeComponent implements OnInit {
     this.log = `Checkbox ${element.value} was ${
       element.checked ? "" : "un"
     }checked\n`;
+    this.alertService.success("Interest " + element.value + ": " + this.log);
   }
 
   constructor(
     private userService: UserService,
     public guestService: GuestService,
-    public guideService: GuideService
+    public guideService: GuideService,
+    private alertService: AlertService
   ) {
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
     this.firstName = this.currentUser.firstName;
