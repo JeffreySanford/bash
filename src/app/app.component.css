@@ -1,2 +1,7 @@
-
-
+.top-spacer {
+  width: 95%;
+  margin: 0 auto;
+}
+.footer {
+  margin: 0 2em;
+}

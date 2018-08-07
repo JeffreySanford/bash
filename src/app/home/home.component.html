@@ -1,5 +1,7 @@
 ﻿<div class="container app-loading">
-  <div class="header-objects center" center><h3>My Favorite Places</h3></div>
+  <div class="header-objects center" center>
+    <h3>My Favorite Places</h3>
+  </div>
   <div class="header-objects left fa fa-plane" [matMenuTriggerFor]="menu">
     <button mat-icon-button>
       <span class="fa fa-plane" size="2x"></span>
@@ -35,10 +37,10 @@
 
 <div class="container view" [@slideInLeft]>
   <div class="row">
-    <div id="where-to" class="col-md-6" style="">
+    <div id="where-to" class="col-md-6">
       <div>
         <div class="row">
-          <ul style="">
+          <ul>
             <p class="show guests" class="content-descriptor">Here's people looking to travel with similar interests.</p>
             <li class="col-md-4 pull-left" *ngFor="let guest of guests; let i = index;">
               <a routerLink="/guest/{{guest.id}}">
