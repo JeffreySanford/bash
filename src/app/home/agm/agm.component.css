@@ -1,5 +1,5 @@
 agm-map {
-  height: 250px;
+  height: 295px;
   position: relative;
   width: 100%;
 }
@@ -7,5 +7,5 @@ agm-map {
 .search {
   position: relative;
   width: 100%;
-  margin: 1em auto 2em;
+  margin: 1em auto .25em;
 }
