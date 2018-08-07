@@ -12,6 +12,11 @@
   z-index: 5;
 }
 
+.header-objects button {
+  background-color: lime;
+  border-radius: 50%;
+}
+
 mat-menu-content {
   position: fixed;
   top: 1em;
@@ -69,7 +74,7 @@ ul {
 }
 
 .checkboxes {
-  padding: .5em;
+  padding: 0;
 }
 
 .checkboxes input[type="checkbox"] {
@@ -83,8 +88,11 @@ ul {
   color: green;
 }
 
-.interest-icon {
+p .interest-icon {
   margin-left: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 0em;
+  padding:0;
 }
 .pull-left {
   float: left;
@@ -117,7 +125,7 @@ ul {
   color: black;
   font-size: 1em !important;
   text-align: center;
-  margin: 1em auto 0;
+  margin: .5em auto 0;
   line-height: 1em;
 }
 
