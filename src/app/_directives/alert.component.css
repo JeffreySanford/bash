@@ -1,0 +1,7 @@
+.alert-notify {
+  position: absolute;
+  bottom: 2em;
+  width: 90%;
+  left: 5%;
+  right: 5%;
+}
