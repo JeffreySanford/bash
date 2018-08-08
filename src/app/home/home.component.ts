@@ -4,6 +4,8 @@ import { first } from "rxjs/operators";
 import { User } from "../_models";
 import { UserService, AlertService } from "../_services";
 
+import { AppHeaderComponent } from "../app-header/app-header.component";
+
 import {
   trigger,
   state,
@@ -106,11 +108,5 @@ export class HomeComponent implements OnInit {
       accomodations: true,
       dynamic: false
     };
-    let firstName = this.currentUser.firstName;
-
-    let userLinks = ["/login", "/register", "/account", "/settings"];
-    let links = ["/landing", "/guest", "/host", "/vendor"];
-    this.userLinks = userLinks;
-    this.links = links;
   }
 }

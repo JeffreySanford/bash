@@ -1,38 +1,4 @@
-﻿<div class="container app-loading">
-  <div class="header-objects center">
-    <h3>BASH</h3>
-  </div>
-  <div class="header-objects left" [matMenuTriggerFor]="menu">
-    <button class="mat-elevation-z4" mat-icon-button>
-      <span style="font-size: 1.75em;"class="fa fa-plane" size="2x"></span>
-    </button>
-
-    <mat-menu class="mat-elevation-z8 menu-overlay" #menu="matMenu">
-      <a *ngFor="let link of links">
-        <button class="mat-elevation-z4" mat-menu-item [routerLink]="[link]">
-          <span class="fa fa-plane" size="2x"></span>
-          {{ link }}
-        </button>
-      </a>
-    </mat-menu>
-  </div>
-  <div class="header-objects right" [matMenuTriggerFor]="userMenu">
-    <button class="mat-elevation-z4" mat-icon-button>
-      <span style="font-size: 1.75em;" class="fa fa-user" size="2x"></span>
-    </button>
-    <p style="margin-top: .5em;">{{ firstName }}</p>
-
-    <mat-menu #userMenu="matMenu">
-      <a *ngFor="let userLink of userLinks">
-        <button mat-menu-item [routerLink]="[userLink]">
-          <span class="fa fa-plane" size="2x"></span>
-          {{ userLink }}
-        </button>
-      </a>
-    </mat-menu>
-  </div>
-</div>
-
+﻿<app-header></app-header>
 
 <div style="margin-top: 3em;" class="container view" [@slideInLeft]>
   <div class="row">
@@ -80,25 +46,29 @@
       <div class="checkboxes">
         <label class="interets form-check-label mat-elevation-z2" [class.selected]="tourism.checked">
           <input #tourism type="checkbox" value="tourism" (change)="logCheckbox(tourism)">
-          <p><span class="fa fa-bus interest-icon"></span>&nbsp;Tourism</p>
+          <p>
+            <span class="fa fa-bus interest-icon"></span>&nbsp;Tourism</p>
         </label>
 
         <label class="interets form-check-label mat-elevation-z2" [class.selected]="food.checked">
           <input #food type="checkbox" value="food" (change)="logCheckbox(food)">
-          <p><span class="fa fa-home interest-icon"></span>&nbsp;food</p>
+          <p>
+            <span class="fa fa-home interest-icon"></span>&nbsp;food</p>
         </label>
 
         <label class="interets form-check-label mat-elevation-z2" [class.selected]="accomodations.checked">
           <input #accomodations type="checkbox" value="accomodations" (change)="logCheckbox(accomodations)">
-          <p><span class="fa fa-bed interest-icon"></span>&nbsp;Accomodations</p>
+          <p>
+            <span class="fa fa-bed interest-icon"></span>&nbsp;Accomodations</p>
         </label>
 
         <label class="interets form-check-label mat-elevation-z2" [class.selected]="dynamic.checked">
           <input #dynamic type="checkbox" value="dynamic" (change)="logCheckbox(dynamic)">
-          <p><span class="fa fa-gift interest-icon"></span>&nbsp;Dynamic</p>
+          <p>
+            <span class="fa fa-gift interest-icon"></span>&nbsp;Dynamic</p>
         </label>
       </div>
-
+      <app-footer></app-footer>
       <!-- <app-messages></app-messages> -->
     </div>
   </div>

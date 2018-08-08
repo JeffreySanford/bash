@@ -1,9 +1,20 @@
+/* There needs to be a global style.  This will be create with a material design customer style sheet.  Add the following there. */
+
+/* Color scheme working for BASH
+
+Primary Magenta 255,0,255
+Red and Blue Complimentary 255,13,13 and 123,13,255
+Darker Margenta and More Purple are 232,12,122 and 172,12,252 
+*/
+
 .top-spacer {
   width: 95%;
   margin: 0 auto;
 }
-.footer {
-    position: fixed;
-    bottom: .5em;
-    right: 2em;
+
+.alert {
+  z-index: 5;
+  opacity: 1;
+  visibility:visible;
+  border: 1px solid purple;
 }

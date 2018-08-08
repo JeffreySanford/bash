@@ -37,6 +37,9 @@ import { AgmComponent } from "./home/agm/agm.component";
 
 import { GuideService } from "./_services/guides.service";
 import { GuestService } from "./_services/guests.service";
+import { AppHeaderComponent } from './app-header/app-header.component';
+import { AppFooterComponent } from './app-footer/app-footer.component';
+
 
 @NgModule({
   imports: [
@@ -65,7 +68,9 @@ import { GuestService } from "./_services/guests.service";
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    AppHeaderComponent,
+    AppFooterComponent
   ],
   declarations: [
     AppComponent,
@@ -74,6 +79,8 @@ import { GuestService } from "./_services/guests.service";
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    AppHeaderComponent,
+    AppFooterComponent
   ],
   providers: [
     AuthGuard,
