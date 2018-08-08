@@ -36,12 +36,13 @@
 
 <div style="margin-top: 3em;" class="container view" [@slideInLeft]>
   <div class="row">
-    <div id="where-to" class="col-md-4" style="margin-left: -2em;">
+    <div id="where-to" class="col-md-4 col-sm-6" style="margin-left: -2em;">
       <div>
         <div class="row">
           <ul>
-            <p style="font-size: .8em;" class="show guests content-descriptor">Users with similar interests and location</p>
-            <li class="col-md-3 pull-left" *ngFor="let guest of guests; let i = index;">
+            <p style="font-size: .8em;" class="show guests content-descriptor">Similar guests</p>
+            <div style="clear: both;"></div>
+            <li class="col-md-4 col-sm-6 pull-left" *ngFor="let guest of guests; let i = index;">
               <a routerLink="/guest/{{guest.id}}">
                 <div class="btn-circle mat-elevation-z8">
                   <i class="fa fa-user"></i>
@@ -54,8 +55,9 @@
         </div>
         <div class="row">
           <ul style="margin-top: -1em;">
-            <p style="font-size: .8em;" class="show content-descriptor">Guides for interest and location</p>
-            <li class="col-md-3 pull-left" *ngFor="let guide of guides; let i = index;">
+            <p style="font-size: .8em;" class="show content-descriptor">Related Guides</p>
+            <div style="clear: both;"></div>
+            <li class="col-md-4 col-sm-6 pull-left" *ngFor="let guide of guides; let i = index;">
               <a routerLink="/guide/{{guide.id}}">
                 <div class="btn-circle mat-elevation-z8">
                   <i class="fa fa-user"></i>
@@ -68,7 +70,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6 mat-elevation-z4" style="height: 24em;">
+    <div class="col-md-6 col-sm-6 mat-elevation-z4 section-map">
       <p id="where-to" style="font-size: 1.1em;">Where would you like to visit?</p>
       <app-agm>loading</app-agm>
     </div>

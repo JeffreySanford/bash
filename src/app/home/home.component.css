@@ -162,7 +162,10 @@ p .interest-icon {
   stroke-linecap: round;
   stroke: #ddd;
 }
-
+.section-map {
+  height: 24em;
+  background-color:turquoise;
+}
 .footer p {
   position: fixed;
   bottom: 0.5em;
