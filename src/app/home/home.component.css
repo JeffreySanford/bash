@@ -6,30 +6,6 @@
   width: 100%;
 }
 
-.header-objects {
-  position: fixed;
-  top: 1em;
-  z-index: 5;
-}
-
-.header-objects button {
-  background-color: lime;
-  border-radius: 50%;
-}
-
-mat-menu-content {
-  position: fixed;
-  top: 1em;
-  background-color: yellow;
-}
-
-.left{
-  left: 1em !important;
-}
-
-.right {
-  right: 1em !important;
-}
 
 .app-loading {
   position: relative;
@@ -163,14 +139,11 @@ p .interest-icon {
   stroke: #ddd;
 }
 .section-map {
+  margin-top: 4em;
   height: 24em;
   background-color:turquoise;
 }
-.footer p {
-  position: fixed;
-  bottom: 0.5em;
-  right: 5em;
-}
+
 
 @keyframes rotate {
   100% {

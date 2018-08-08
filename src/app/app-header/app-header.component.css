@@ -1,0 +1,35 @@
+.header-objects {
+    position: fixed;
+    top: 1em;
+    z-index: 5;
+  }
+  
+  .header-objects button {
+    background-color: lime;
+    border-radius: 50%;
+  }
+  
+  mat-menu-content {
+    position: fixed;
+    top: 1em;
+    background-color: yellow;
+  }
+  
+  .left{
+    left: 1em !important;
+  }
+  
+  .right {
+    right: 1em !important;
+  }
+
+  .center {
+      left: 48%;
+  }
+  
+  .center h1 {
+    color: rgb(123,13,255);
+    font-variant: small-caps;
+    margin-top: -.5em;
+    
+  }
