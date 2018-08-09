@@ -1,5 +1,6 @@
 .alert-notify {
-  bottom: 2em;
-  width: 60%;
-  margin: -3em auto 0;
+  bottom: 0;
+  width: 90%;
+  margin: 0 auto 0;
+  border-radius: 5px;
 }

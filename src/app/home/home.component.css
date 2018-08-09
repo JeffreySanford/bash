@@ -4,9 +4,26 @@
 
 .view {
   width: 100%;
+  margin: 5em 0 0 5em;
 }
 
+.related-users {
+  font-size: 1.75em;
+  margin: 0 4em 0 -4em;
+}
 
+.guests {
+  margin: 3em 0 0 0 0;
+}
+
+.guides {
+  margin: 1em 0 0 -.5em
+}
+
+.pull-left {
+  width: 3em;
+  float: left;
+}
 .app-loading {
   position: relative;
   display: flex;
@@ -14,6 +31,27 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.app-loading .spinner {
+  height: 200px;
+  width: 200px;
+  animation: rotate 2s linear infinite;
+  transform-origin: center center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.app-loading .spinner .path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke: #ddd;
 }
 
 .show {
@@ -30,13 +68,6 @@
 ul {
   list-style: none;
   margin-top: -2em;
-}
-
-#where-to {
-  color: purple;
-  font-size: 1.5em;
-  float: left;
-  left: -1em;
 }
 
 .form-check-input {
@@ -68,7 +99,7 @@ p .interest-icon {
   margin-left: 1em;
   margin-top: 1.5em;
   margin-bottom: 0em;
-  padding:0;
+  padding: 0;
 }
 .pull-left {
   float: left;
@@ -79,71 +110,60 @@ p .interest-icon {
   border-radius: 50%;
   width: 3.5em !important;
   height: 3.5em !important;
-  background-color: rgba(255,0,255, .5);
+  background-color: rgba(255, 0, 255, 0.5);
   display: inline-block;
   width: 10em;
   height: 3em;
   padding: 0.1em 0.5em;
   color: white;
-  font-size: .7em;
+  font-size: 0.8em;
 }
 
 .button-label {
   text-align: center;
   width: 6em;
   border: 1px solid magenta;
-  font-size:.4em;
-  color:black;
+  font-size: 0.4em;
+  color: black;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
   margin-bottom: 1em;
 }
 
 .btn-circle p {
   color: black;
-  font-size: 1em !important;
   text-align: center;
-  margin: .5em auto 0;
-  line-height: 1em;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border: 1px solid black;
+  line-height: 1.5em;
 }
 
 .btn-circle i {
   font-size: 2.5em;
   margin: 1px auto 0 1px;
   text-align: center;
-  color: rgba(128,0,0, 0.5);
+  color: rgba(128, 0, 0, 0.5);
 }
 
 .btn-circle .id-for-icon {
-  font-size: 0.5em;
-  margin-top: 0em;
+  font-size: 0.75em !important;
   color: black;
+  width: 1.5em;
+  margin: -0.4em auto 0;
 }
 
-.app-loading .spinner {
-  height: 200px;
-  width: 200px;
-  animation: rotate 2s linear infinite;
-  transform-origin: center center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.app-loading .spinner .path {
-  stroke-dasharray: 1, 200;
-  stroke-dashoffset: 0;
-  animation: dash 1.5s ease-in-out infinite;
-  stroke-linecap: round;
-  stroke: #ddd;
-}
 .section-map {
   margin-top: 4em;
   height: 24em;
-  background-color:turquoise;
+  background-color: rgba(64, 224, 208, 0.3);
+  border: 3px solid teal;
+  border-radius: 5px;
 }
 
+.user-interests {
+  margin-top: 8em;
+}
 
 @keyframes rotate {
   100% {

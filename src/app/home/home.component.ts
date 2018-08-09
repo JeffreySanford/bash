@@ -57,14 +57,27 @@ export class HomeComponent implements OnInit {
   public guides: GUIDE[];
   public links: any;
   public userLinks: any;
+  public interests: any;
 
   log = "";
 
   logCheckbox(element: HTMLInputElement): void {
-    this.log = `Checkbox ${element.value} was ${
-      element.checked ? "" : "un"
-    }checked\n`;
-    this.alertService.success("Interest " + element.value + ": " + this.log);
+    this.log = "checked;"
+
+    let i = 0;
+    let interests = this.currentUser.interests;
+    for (i; i<interests.length; i++) {
+      if (!interests.includes(element)) {
+        // add the interest
+        interests.push(element);
+        this.alertService.success("Added interest " + element + ": " + this.log);
+        debugger
+      } else {
+        let index = this.currentUser.interests.indexOf(element);
+        this.currentUser.interests.slice(index);
+        this.alertService.error("Removed interest " + element + ": " + this.log);
+      }
+    }
   }
 
   constructor(
@@ -75,6 +88,7 @@ export class HomeComponent implements OnInit {
   ) {
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
     this.firstName = this.currentUser.firstName;
+    this.currentUser.interests = [''];
   }
 
   private loadAllUsers() {
@@ -102,11 +116,6 @@ export class HomeComponent implements OnInit {
 
     this.guests = guests;
     this.guides = guides;
-    const attractions = {
-      tourism: true,
-      food: true,
-      accomodations: true,
-      dynamic: false
-    };
+    this.interests = ['food', 'accomadations', 'tourism', 'travel']
   }
 }
