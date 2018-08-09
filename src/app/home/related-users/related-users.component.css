@@ -1,6 +1,7 @@
 ul {
   list-style: none;
-  margin-top: -2em;
+  width: 100%;
+  text-align: left;
 }
 
 .related-users {
@@ -8,22 +9,15 @@ ul {
   margin: 0 4em 0 -4em;
 }
 
-.guests {
-  margin: 3em 0 0 0 0;
-}
-
-.guides {
-  margin: 1em 0 0 -0.5em;
-}
-
 .content-descriptor {
-  margin-top: 1em;
-  font-size: 1em;
+  margin-top: 0;
+  font-size: 1.5em;
   color: purple;
 }
 
 .pull-left {
   float: left;
+  font-size: 1.75em;
 }
 
 .btn-circle {

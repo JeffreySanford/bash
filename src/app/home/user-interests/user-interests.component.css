@@ -1,22 +1,49 @@
+
+.user-interests {
+  color: maroon;
+  height: 100%;
+  margin-top: 5em;
+  margin-left: 2em;
+  width: 80%;
+}
+
+ul {
+  list-style: none;
+  position: absolute;
+  text-align: right;
+  right: -4em;
+}
+
+li {
+  text-align: right;
+  margin-bottom: .5em;
+  margin-right: 2em;
+  background-color: hotpink;
+  border-radius: 5px;
+  line-height: 2em;
+  width: 9em;
+}
+
 .checkboxes {
-    padding: 0;
-  }
-  
-  .checkboxes input[type="checkbox"] {
-    display: none;
-  }
-  
-  .checkboxes .selected {
-    border: 1.5px solid green;
-    background-color: white;
-    border-radius: 10px;
-    color: green;
-  }
-  
-  p .interest-icon {
-    margin-left: 1em;
-    margin-top: 1.5em;
-    margin-bottom: 0em;
-    padding: 0;
-  }
-  
+  padding: 0;
+}
+
+.checkboxes input[type="checkbox"] {
+  display: none;
+  margin-right: 1em;
+}
+
+.checkboxes .selected {
+  border: 1.5px solid green;
+  background-color: white;
+  border-radius: 10px;
+  color: green;
+}
+
+label {
+  margin-top: .25em;margin-right: .5em;font-size: 1.5em;
+}
+.interest-icon {
+  position: absolute; left: 3em;margin-top: .5em;font-size: .8em;
+}
+

@@ -1,10 +1,13 @@
-<ul>
-  <li *ngFor="let interest of interests; let i = index;">
-    <div class="checkboxes">
-      <label class="interest form-check-label mat-elevation-z2" [class.selected]="interest.checked">
-        <input style="margin:0;padding:0;" #tourism type="checkbox" [value]="interest" (change)="logCheckbox(interest)">
-        <span class="fa fa-bus interest-icon"></span>&nbsp;{{ interest }}
-      </label>
-    </div>
-  </li>
-</ul>
+<div class="user-interests">
+  <ul>
+    <li *ngFor="let interest of interests; let i = index;">
+      <div class="checkboxes mat-elevation-z2">
+        <label style="" [class.selected]="interest.checked">
+          <span style="" class="fa fa-bus interest-icon"></span>
+          <input type="checkbox" [value]="interest" (change)="logCheckbox(interest)">
+          {{ interest }}
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>

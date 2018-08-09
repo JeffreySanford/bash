@@ -49,6 +49,6 @@ export class UserInterestsComponent implements OnInit {
     }
   }
   ngOnInit() {
-    this.interests = ["food", "accomadations", "tourism", "travel"];
+    this.interests = ["food", "shelter", "tourism", "travel"];
   }
 }
