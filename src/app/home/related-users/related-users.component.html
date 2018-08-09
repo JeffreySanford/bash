@@ -1,7 +1,7 @@
 <div class="row">
   <ul>
     <p style="margin-top: 1em;" class="content-descriptor">Similar guests</p>
-    <li class="col-lg-3 col-md-4 col-sm-12 col-xs-12 pull-left" *ngFor="let guest of guests; let i = index;" style="margin-left: .5em;">
+    <li class="col-lg-2 col-md-3 col-sm-4 col-xs-4 pull-left" *ngFor="let guest of guests; let i = index;" style="min-width: 3em;margin-left: .5em;">
       <a routerLink="/guest/{{guest.id}}">
         <div class="btn-circle mat-elevation-z8">
           <i class="fa fa-user"></i>
@@ -15,7 +15,7 @@
 <div class="row">
   <ul>
     <p class="content-descriptor">Related Guides</p>
-    <li class="col-lg-3 col-md-4 col-sm-12 col-xs-12 pull-left" *ngFor="let guide of guides; let i = index;" style="margin-left: .5em;">
+    <li class="col-lg-2 col-md-3 col-sm-4 col-xs-4 pull-left" *ngFor="let guide of guides; let i = index;" style="min-width: 3em;margin-left: .5em;">
       <a routerLink="/guide/{{guide.id}}">
         <div class="btn-circle mat-elevation-z8">
           <i class="fa fa-user"></i>

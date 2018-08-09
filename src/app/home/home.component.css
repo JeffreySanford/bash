@@ -46,6 +46,10 @@
   border-radius: 5px;
 }
 
+.user-interests {
+  margin-left: 1em;
+}
+
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
