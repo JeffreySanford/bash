@@ -38,7 +38,9 @@ import { AgmComponent } from "./home/agm/agm.component";
 import { GuideService } from "./_services/guides.service";
 import { GuestService } from "./_services/guests.service";
 import { AppHeaderComponent } from './app-header/app-header.component';
-import { AppFooterComponent } from './app-footer/app-footer.component';
+import { AppFooterComponent } from './app-footer/app-footer.component';;
+import { RelatedUsersComponent } from './home/related-users/related-users.component';
+import { UserInterestsComponent } from './home/user-interests/user-interests.component'
 
 
 @NgModule({
@@ -80,8 +82,10 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
     LoginComponent,
     RegisterComponent,
     AppHeaderComponent,
-    AppFooterComponent
-  ],
+    AppFooterComponent,
+    RelatedUsersComponent
+,
+    UserInterestsComponent  ],
   providers: [
     AuthGuard,
     AlertService,

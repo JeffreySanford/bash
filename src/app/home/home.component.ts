@@ -1,10 +1,4 @@
 ﻿import { Component, OnInit } from "@angular/core";
-import { first } from "rxjs/operators";
-
-import { User } from "../_models";
-import { UserService, AlertService } from "../_services";
-
-import { AppHeaderComponent } from "../app-header/app-header.component";
 
 import {
   trigger,
@@ -14,15 +8,6 @@ import {
   animate,
   keyframes
 } from "@angular/animations";
-
-import { GUEST } from "../_models/guest";
-import { GuestService } from "../_services/guests.service";
-
-import { GUIDE } from "../_models/guide";
-import { GuideService } from "../_services/guides.service";
-import { Observable } from "rxjs";
-
-import { AgmCoreModule } from "@agm/core";
 
 @Component({
   templateUrl: "./home.component.html",
@@ -49,73 +34,7 @@ import { AgmCoreModule } from "@agm/core";
   ]
 })
 export class HomeComponent implements OnInit {
-  currentUser: User;
-  firstName: String;
-  users: User[] = [];
+  constructor() {}
 
-  public guests: GUEST[];
-  public guides: GUIDE[];
-  public links: any;
-  public userLinks: any;
-  public interests: any;
-
-  log = "";
-
-  logCheckbox(element: HTMLInputElement): void {
-    this.log = "checked;"
-
-    let i = 0;
-    let interests = this.currentUser.interests;
-    for (i; i<interests.length; i++) {
-      if (!interests.includes(element)) {
-        // add the interest
-        interests.push(element);
-        this.alertService.success("Added interest " + element + ": " + this.log);
-        debugger
-      } else {
-        let index = this.currentUser.interests.indexOf(element);
-        this.currentUser.interests.slice(index);
-        this.alertService.error("Removed interest " + element + ": " + this.log);
-      }
-    }
-  }
-
-  constructor(
-    private userService: UserService,
-    public guestService: GuestService,
-    public guideService: GuideService,
-    private alertService: AlertService
-  ) {
-    this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    this.firstName = this.currentUser.firstName;
-    this.currentUser.interests = [''];
-  }
-
-  private loadAllUsers() {
-    this.userService
-      .getAll()
-      .pipe(first())
-      .subscribe(users => {
-        this.users = users;
-      });
-  }
-
-  deleteUser(id: number) {
-    this.userService
-      .delete(id)
-      .pipe(first())
-      .subscribe(() => {
-        this.loadAllUsers();
-      });
-  }
-
-  ngOnInit() {
-    const users = this.loadAllUsers();
-    const guests = this.guestService.getGuests();
-    const guides = this.guideService.getGuides();
-
-    this.guests = guests;
-    this.guides = guides;
-    this.interests = ['food', 'accomadations', 'tourism', 'travel']
-  }
+  ngOnInit() {}
 }
