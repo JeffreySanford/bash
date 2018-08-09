@@ -1,6 +1,6 @@
 ul {
   list-style: none;
-  width: 110%;
+  width: 100%;
   text-align: left;
 }
 
@@ -35,12 +35,12 @@ ul {
 
 .button-label {
   text-align: center;
-  width: 6em;
+  width: 5.5em;
   border: 1px solid magenta;
   font-size: 0.5em;
   color: black;
   margin-top: 0em;
-  margin-left: -.15em;
+  margin-left: .15em;
   margin-bottom: .5em;
 }
 
