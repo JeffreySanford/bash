@@ -1,11 +1,12 @@
 <div class="user-interests">
   <ul>
     <li *ngFor="let interest of interests; let i = index;">
-      <div class="checkboxes mat-elevation-z2">
-        <label (change)="interestSelection(interestEl)">
+      <div class="checkboxes" (mouseenter)='mouseenter($event)' (mouseleave)="mouseleave($event)">
+        <label >
           <span class="fa fa-bus interest-icon"></span>
           <input #interestEl type="checkbox" [value]="interest" 
-            [class.selected]="interestEl.checked"> {{ interest }}
+            [class.selected]="interestEl.checked"
+            (change)="interestSelection(interestEl)"> {{ interest }}
         </label>
       </div>
     </li>

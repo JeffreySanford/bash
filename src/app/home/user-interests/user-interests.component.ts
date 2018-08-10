@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Renderer2 } from "@angular/core";
 
 import { User } from "../../_models/user";
 
@@ -14,9 +14,19 @@ export class UserInterestsComponent implements OnInit {
   currentUser: User;
   public interests: any = [];
   users: User[] = [];
+  event: MouseEvent;
+
+  mouseenter (event: MouseEvent) {
+    this.renderer2.addClass(event.target, 'mat-elevation-z5')
+ }
+ 
+  mouseleave (event: MouseEvent) {
+    this.renderer2.removeClass(event.target, 'mat-elevation-z5')
+  }
 
   constructor(
     private userService: UserService,
+    private renderer2: Renderer2, 
     private alertService: AlertService
   ) {
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -39,5 +49,6 @@ export class UserInterestsComponent implements OnInit {
 
   ngOnInit() {
     this.interests = ["food", "shelter", "tourism", "travel"];
+
   }
 }

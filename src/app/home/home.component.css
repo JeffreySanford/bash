@@ -1,6 +1,8 @@
 .view {
   width: 100%;
-  margin: 3em 0 0 0em;
+  position: absolute;
+  top: 4em;
+  left: 1em;
 }
 
 .pull-left {
@@ -41,7 +43,7 @@
   margin-left: 0;
   height: 24em;
   background-color: rgba(64, 224, 208, 0.3);
-  border: 3px solid teal;
+  border: 1px solid teal;
   border-radius: 5px;
 }
 
