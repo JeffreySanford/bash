@@ -1,8 +1,7 @@
-
 .user-interests {
   color: maroon;
   height: 100%;
-  margin-top: 5em;
+  margin-top: -2.75em;
   margin-left: 2em;
   width: 80%;
 }
@@ -16,7 +15,7 @@ ul {
 
 li {
   text-align: right;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   margin-right: 6em;
   background-color: hotpink;
   border-radius: 5px;
@@ -41,9 +40,13 @@ li {
 }
 
 label {
-  margin-top: .25em;margin-right: .5em;font-size: 1.25em;
+  margin-top: 0.25em;
+  margin-right: 0.5em;
+  font-size: 1.25em;
 }
 .interest-icon {
-  position: absolute; left: 3em;margin-top: .5em;font-size: .8em;
+  position: absolute;
+  left: 3em;
+  margin-top: 0.5em;
+  font-size: 0.8em;
 }
-

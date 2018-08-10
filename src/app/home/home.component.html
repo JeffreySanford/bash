@@ -1,17 +1,17 @@
 ﻿<app-header></app-header>
 
-<div class="container view" [@slideInLeft]>
+<div style="position: absolute; top: 4em; left: 1em;" class="container view" [@slideInLeft]>
   <div class="row">
       <div class="col-lg-5 col-md-6 col-sm-6 col-xs-4 related-users" >
         <app-related-users></app-related-users>
       </div>
 
-      <div class="col-lg-6 col-md-5 col-sm-6 col-xs-5 mat-elevation-z4 section-map">
+      <div style="position: absolute; top: 4em;margin: 0 40%;" class="col-lg-6 col-md-5 col-sm-6 col-xs-5 mat-elevation-z4 section-map">
         <p>Where would you like to visit?</p>
         <app-agm>loading</app-agm>
       </div>
 
-  <div class="user-interests" style="position: absolute; top: 10em; right: 1em;float:right;">
+  <div class="user-interests" style="position: absolute; top: 10em; right: -10em;">
     <app-user-interests></app-user-interests>
   </div>
   <!-- <app-messages></app-messages> -->

@@ -9,11 +9,13 @@ Darker Margenta and More Purple are 232,12,122 and 172,12,252
 
 .top-spacer {
   width: 95%;
-  margin: 0 auto;
+  margin: 1em auto 0;
 }
 
 .alert {
   z-index: 5;
   opacity: 1;
   visibility:visible;
+  height: 2em;
+  margin-bottom: -5em;
 }

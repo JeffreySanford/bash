@@ -12,7 +12,7 @@ import { AlertService } from "../../_services";
 })
 export class UserInterestsComponent implements OnInit {
   currentUser: User;
-  public interests: any;
+  public interests: any = [];
   users: User[] = [];
 
   constructor(
@@ -20,34 +20,23 @@ export class UserInterestsComponent implements OnInit {
     private alertService: AlertService
   ) {
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    this.currentUser.interests = [""];
+    this.currentUser.interests = [];
   }
 
-  log = "";
-
-  logCheckbox(element: HTMLInputElement): void {
-    this.log = "broken";
-
-    let i = 0;
+  interestSelection(element: HTMLInputElement): void {
     let interests = this.currentUser.interests;
-    for (i; i < interests.length; i++) {
-      if (!interests.includes(element)) {
-        // add the interest
-        interests.push(element);
-        this.alertService.success(
-          "Added interest " + element + ": " + this.log
-        );
-        debugger;
-      } else {
-        let index = this.currentUser.interests.indexOf(element);
-        this.currentUser.interests.slice(index);
-        this.alertService.error(
-          "Removed interest " + element + ": " + this.log
-        );
-        debugger;
-      }
+    let present = interests.includes(element.value);
+    if (present === false) {
+      // add the interest
+      interests.push(element.value);
+      this.alertService.success("Added interest " + element.value);
+    } else {
+      let index = interests.indexOf(element.value);
+      interests.splice(interests.indexOf(index, 1));
+      this.alertService.error("Removed interest " + element.value);
     }
   }
+
   ngOnInit() {
     this.interests = ["food", "shelter", "tourism", "travel"];
   }
