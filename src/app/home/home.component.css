@@ -46,7 +46,9 @@
 }
 
 .user-interests {
-  margin-left: 1em;
+  position: relative;
+  left: 17em;
+  top: -22em;
 }
 
 @keyframes rotate {
