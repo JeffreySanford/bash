@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let interest of interests; let i = index;">
       <div class="checkboxes" (mouseenter)='mouseenter($event)' (mouseleave)="mouseleave($event)">
-        <label >
+        <label>
           <span class="fa fa-bus interest-icon"></span>
           <input #interestEl type="checkbox" [value]="interest" 
             [class.selected]="interestEl.checked"

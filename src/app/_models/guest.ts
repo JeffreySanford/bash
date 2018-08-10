@@ -1,7 +1,8 @@
 export class GUEST {
-  id: number;
+  id: any;
   name: string;
   longitude?: number;
   latitude?: number;
+  interests: string[];
   // profile_video: getProfileVideo();
 }

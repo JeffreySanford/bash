@@ -19,11 +19,11 @@ export class GuestService {
   getGuests() {
     
     const guests = [
-      { id: 11, name: 'Mr. Nice' },
-      { id: 12, name: 'Narco' },
-      { id: 13, name: 'Bombasto' },
-      { id: 14, name: 'Celeritas' },
-      { id: 15, name: 'Magneta' },
+      { id: 11, name: 'Mr. Nice', interests:["travel"] },
+      { id: 12, name: 'Narco', interests:["tourism"] },
+      { id: 13, name: 'Bombasto', interests:["shelter"] },
+      { id: 14, name: 'Celeritas', interests:["food"] },
+      { id: 15, name: 'Magneta', interests:["food", "shelter", "tourism", "travel"] }
     ];
     return guests;
     // return this.http.get<GUEST[]>(this.guestsUrl);
