@@ -1,7 +1,7 @@
 .user-interests {
   color: maroon;
   height: 100%;
-  margin-top: -2.75em;
+  margin-top: -2em;
   margin-left: 2em;
   width: 80%;
 }
@@ -16,7 +16,7 @@ ul {
 li {
   text-align: right;
   margin-bottom: 0.5em;
-  margin-right: 6em;
+  margin-right: -4em;
   background-color: hotpink;
   border-radius: 5px;
   line-height: 2em;

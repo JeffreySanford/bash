@@ -2,20 +2,29 @@
   <div class="mat-elevation-z4 dialog" class="row" style="background-color: magenta;height: 10em;margin-top: -3em;">
     <div class="md-col-6" style="width: 40%;margin: 3em 0 0 1em;">
       <mat-form-field style="width: 100%;">
-        <input style="width: 100%;background-color: white;" matInput (ngModel)="this.loginForm.value" formControlName="username" placeholder="e-mail address" class="form-control"
-          type="text" required>
+        <input style="width: 100%;background-color: white;" matInput (ngModel)="this.loginForm.value" formControlName="username"
+          placeholder="e-mail address" class="form-control" type="text" required>
       </mat-form-field>
     </div>
     <div class="md-col-6" style="width: 40%;margin: 3em 1em 0 auto;">
       <mat-form-field style="width: 100%;">
-        <input style="background-color: white;" matInput (ngModel)="this.loginForm.value" formControlName="password" class="form-control" placeholder="password" type="password"
-          required>
+        <input style="background-color: white;" matInput (ngModel)="this.loginForm.value" formControlName="password" class="form-control"
+          placeholder="password" type="password" required>
       </mat-form-field>
     </div>
   </div>
-  <mat-grid-list cols="3" rowHeight="4em">
-    <mat-grid-tile><button mat-button class="md-col-3 action submit-btn mat-elevation-z4" type="cancel">clear</button></mat-grid-tile>
-    <mat-grid-tile><button mat-button routerLink="/register" class="md-col-3 action register-btn mat-elevation-z4" type="submit">register</button></mat-grid-tile>
-    <mat-grid-tile><button  mat-button class="md-col-3  action submit-btn mat-elevation-z4" type="submit">submit</button></mat-grid-tile>
+  <mat-grid-list cols="4" rowHeight="4em">
+    <mat-grid-tile>
+      <button mat-button class="md-col-3 action submit-btn mat-elevation-z4" type="cancel">clear</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-button routerLink="/register" class="md-col-3 action register-btn mat-elevation-z4" type="submit">register</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-button (click)="pinterest()" routerLink="/login" class="md-col-3 action register-btn mat-elevation-z4" type="submit">pintrest</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-button class="md-col-3  action submit-btn mat-elevation-z4" type="submit">submit</button>
+    </mat-grid-tile>
   </mat-grid-list>
 </form>

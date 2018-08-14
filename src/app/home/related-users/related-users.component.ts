@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { GUEST } from "../../_models/guest";
 import { GuestService } from "../../_services/guests.service";
@@ -19,6 +19,7 @@ export class RelatedUsersComponent implements OnInit {
   public guests: GUEST[];
   public guides: GUIDE[];
   public currentUser: User;
+  @Input() interests: any;
 
   constructor(
     public userService: UserService,
@@ -34,5 +35,6 @@ export class RelatedUsersComponent implements OnInit {
 
     this.guests = guests;
     this.guides = guides;
+ 
   }
 }

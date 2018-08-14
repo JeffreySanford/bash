@@ -1,9 +1,10 @@
-import { Component, OnInit, Renderer2 } from "@angular/core";
+import { Component, OnInit, EventEmitter, Output, Renderer2, ɵNgOnChangesFeature } from "@angular/core";
 
 import { User } from "../../_models/user";
 
 import { UserService } from "../../_services/user.service";
 import { AlertService } from "../../_services";
+
 
 @Component({
   selector: "app-user-interests",
@@ -11,17 +12,22 @@ import { AlertService } from "../../_services";
   styleUrls: ["./user-interests.component.css"]
 })
 export class UserInterestsComponent implements OnInit {
-  currentUser: User;
-  public interests: any = [];
+  currentUser: User = JSON.parse(localStorage.getItem("currentUser"));
+  @Output() SelectedInterests = new EventEmitter();
   users: User[] = [];
   event: MouseEvent;
-
+  interests: any;
+  
   mouseenter (event: MouseEvent) {
     this.renderer2.addClass(event.target, 'mat-elevation-z5')
  }
  
   mouseleave (event: MouseEvent) {
     this.renderer2.removeClass(event.target, 'mat-elevation-z5')
+  }
+
+  sendMessage() {
+    this.SelectedInterests.emit(this.currentUser.interests);
   }
 
   constructor(
@@ -34,21 +40,22 @@ export class UserInterestsComponent implements OnInit {
   }
 
   interestSelection(element: HTMLInputElement): void {
+    
     let interests = this.currentUser.interests;
     let present = interests.includes(element.value);
     if (present === false) {
       // add the interest
       interests.push(element.value);
-      this.alertService.success("Added interest " + element.value);
+      this.alertService.info("Added interest " + element.value);
     } else {
       let index = interests.indexOf(element.value);
-      interests.splice(interests.indexOf(index, 1));
-      this.alertService.error("Removed interest " + element.value);
+      interests.splice(index, 1);
+      this.alertService.info("Removed interest " + element.value);
     }
+    this.sendMessage();
   }
 
   ngOnInit() {
     this.interests = ["food", "shelter", "tourism", "travel"];
-
   }
 }

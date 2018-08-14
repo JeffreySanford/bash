@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-selected-guide',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectedGuideComponent implements OnInit {
 
+  @Input() ChildInterests: any
   constructor() { }
 
   ngOnInit() {
+    let ChildInterests = this.ChildInterests;
   }
 
 }

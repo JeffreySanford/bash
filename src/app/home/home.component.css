@@ -41,12 +41,14 @@
 
 .section-map {
   margin-left: 0;
-  height: 24em;
+  height: 25em;
   background-color: rgba(64, 224, 208, 0.3);
   border: 1px solid teal;
   border-radius: 5px;
 }
-
+.section-map p {
+  font-size: 1.5em;
+}
 .user-interests {
   position: relative;
   left: 17em;

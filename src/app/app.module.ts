@@ -19,7 +19,7 @@ import {
   MatToolbarModule,
   MatIconModule,
   MatCardModule
-} from '@angular/material';
+} from "@angular/material";
 
 import { AppComponent } from "./app.component";
 import { routing } from "./app.routing";
@@ -32,16 +32,15 @@ import { HomeComponent } from "./home";
 import { LoginComponent } from "./login";
 import { RegisterComponent } from "./register";
 
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule } from "@agm/core";
 import { AgmComponent } from "./home/agm/agm.component";
 
 import { GuideService } from "./_services/guides.service";
 import { GuestService } from "./_services/guests.service";
-import { AppHeaderComponent } from './app-header/app-header.component';
-import { AppFooterComponent } from './app-footer/app-footer.component';;
-import { RelatedUsersComponent } from './home/related-users/related-users.component';
-import { UserInterestsComponent } from './home/user-interests/user-interests.component'
-
+import { AppHeaderComponent } from "./app-header/app-header.component";
+import { AppFooterComponent } from "./app-footer/app-footer.component";
+import { RelatedUsersComponent } from "./home/related-users/related-users.component";
+import { UserInterestsComponent } from "./home/user-interests/user-interests.component";
 
 @NgModule({
   imports: [
@@ -51,7 +50,7 @@ import { UserInterestsComponent } from './home/user-interests/user-interests.com
     HttpClientModule,
     routing,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCKkl5bmy0asqfc2SALju9okIlwnisZi-o&libraries=places'
+      apiKey: "AIzaSyCKkl5bmy0asqfc2SALju9okIlwnisZi-o&libraries=places"
     }),
     MatGridListModule,
     MatListModule,
@@ -62,7 +61,6 @@ import { UserInterestsComponent } from './home/user-interests/user-interests.com
     MatToolbarModule,
     MatIconModule,
     MatCardModule
-
   ],
   exports: [
     MatDialogModule,
@@ -82,10 +80,10 @@ import { UserInterestsComponent } from './home/user-interests/user-interests.com
     LoginComponent,
     RegisterComponent,
     AppHeaderComponent,
-    AppFooterComponent,
-    RelatedUsersComponent
-,
-    UserInterestsComponent  ],
+    AppFooterComponent,
+    RelatedUsersComponent,
+    UserInterestsComponent
+  ],
   providers: [
     AuthGuard,
     AlertService,
