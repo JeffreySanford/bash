@@ -7,9 +7,9 @@
       <span style="font-size: 1.75em;" class="fa fa-plane" size="2x"></span>
     </button>
 
-    <mat-menu class="mat-elevation-z8 menu-overlay" #menu="matMenu">
+    <mat-menu #menu="matMenu" class="left">
       <a *ngFor="let link of links">
-        <button class="mat-elevation-z4" mat-menu-item [routerLink]="[link]">
+        <button mat-menu-item [routerLink]="[link]">
           <span class="fa fa-plane" size="2x"></span>
           {{ link }}
         </button>
