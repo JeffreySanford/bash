@@ -22,7 +22,7 @@
     </button>
     <p style="margin-top: .5em;">{{ firstName }}</p>
 
-    <mat-menu #userMenu="matMenu" style="position: relative;margin-right: 5em !important;">
+    <mat-menu #userMenu="matMenu" class="right">
       <a *ngFor="let userLink of userLinks">
         <button mat-menu-item [routerLink]="[userLink]">
           <span class="fa fa-plane" size="2x"></span>
