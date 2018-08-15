@@ -14,8 +14,16 @@
           {{ interest }}
         </li>
       </ul>
-      <div class="user-interests">
+      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 user-interests">
         <app-user-interests (SelectedInterests)="receiveMessage($event)"></app-user-interests>
+        <div class="all-users">
+          <p>All registered users:</p>
+          <ul>
+            <li *ngFor="let user of users$">
+              {{user.username}} ({{user.firstName}} {{user.lastName}})
+            </li>
+          </ul>
+        </div>    
       </div>
     </div>
   </div>

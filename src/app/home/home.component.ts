@@ -1,4 +1,5 @@
 ﻿import { Component, OnInit, Renderer2, Output, EventEmitter} from "@angular/core";
+import { first } from 'rxjs/operators';
 import { User } from '../_models';
 import { UserService } from '../_services'
 
@@ -39,8 +40,8 @@ import {
 export class HomeComponent implements OnInit {
   firstName: any;
   currentUser: User;
-  user: User;
-  any: any;
+  user: User[];
+  users$: any;
   interests: any;
   
   constructor(
@@ -56,6 +57,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem("currentUser"));
-    let user = this.user;
+    let users$ = this.loadAllUsers();
+  }
+
+  private loadAllUsers() {
+    this.userService.getAll().pipe(first()).subscribe(users => { 
+        this.users$ = users; 
+    });
   }
 }

@@ -24,9 +24,9 @@
                 "src/styles.css",
                 "node_modules/font-awesome/css/font-awesome.css",                
                 "~@angular/material/prebuilt-themes/deeppurple-amber.css",
-                "styles.css",
                 "../node_modules/bootstrap/dist/css/bootstrap.css",
-                "../node_modules/font-awesome/css/font-awesome.css"
+                "../node_modules/font-awesome/css/font-awesome.css",
+                "styles.css"
               ],
               "scripts": []
             },
