@@ -1,40 +1,45 @@
-﻿const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+﻿const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 module.exports = {
-  entry: './src/main.ts',
+  entry: "./src/main.ts",
   module: {
     rules: [
       {
         test: /\.ts$/,
-        use: ['ts-loader', 'angular2-template-loader'],
+        use: ["ts-loader", "angular2-template-loader"],
         exclude: /node_modules/
       },
       {
         test: /\.(html|css)$/,
-        loader: 'raw-loader'
-      },
+        loader: "raw-loader"
+      }
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: [".ts", ".js"]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: 'index.html',
-      inject: 'body'
+      template: "./src/index.html",
+      filename: "index.html",
+      inject: "body"
     }),
     new webpack.DefinePlugin({
       // global app config object
       config: JSON.stringify({
-        apiUrl: 'http://localhost:4000'
+        apiUrl: "http://localhost:4000"
       })
+    }),
+    new BundleAnalyzerPlugin({
+      // analyzerMode: isProd ? "static" : "disabled"
+      // analyzerMode: static
     })
   ],
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: "all"
     },
     runtimeChunk: true
   },
