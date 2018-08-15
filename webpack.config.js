@@ -31,11 +31,11 @@ module.exports = {
       config: JSON.stringify({
         apiUrl: "http://localhost:4000"
       })
-    }),
-    new BundleAnalyzerPlugin({
+    })
+    // new BundleAnalyzerPlugin({
       // analyzerMode: isProd ? "static" : "disabled"
       // analyzerMode: static
-    })
+    // })
   ],
   optimization: {
     splitChunks: {
