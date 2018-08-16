@@ -44,6 +44,11 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
+  pintrest() {
+    // Login 2FA through pinterest
+    alert('Not implimented');
+  }
+
   onSubmit() {
     this.submitted = true;
 

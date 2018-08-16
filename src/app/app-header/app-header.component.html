@@ -3,13 +3,13 @@
     <h1>Bash</h1>
   </div>
   <div class="header-objects left" [matMenuTriggerFor]="menu">
-    <button class="mat-elevation-z4" mat-icon-button>
+    <button   type="button" class="mat-elevation-z4" mat-icon-button>
       <span style="font-size: 1.75em;" class="fa fa-plane" size="2x"></span>
     </button>
 
     <mat-menu #menu="matMenu" class="left">
       <a *ngFor="let link of links">
-        <button mat-menu-item [routerLink]="[link]">
+        <button  type="button" mat-menu-item [routerLink]="[link]">
           <span class="fa fa-plane" size="2x"></span>
           {{ link }}
         </button>
@@ -17,14 +17,14 @@
     </mat-menu>
   </div>
   <div class="header-objects right" [matMenuTriggerFor]="userMenu">
-    <button class="mat-elevation-z4" mat-icon-button>
+    <button  type="button" class="mat-elevation-z4" mat-icon-button>
       <span style="font-size: 1.75em;" class="fa fa-user" size="2x"></span>
     </button>
     <p style="margin-top: .5em;">{{ firstName }}</p>
 
     <mat-menu #userMenu="matMenu" class="right">
       <a *ngFor="let userLink of userLinks">
-        <button mat-menu-item [routerLink]="[userLink]">
+        <button  type="button"mat-menu-item [routerLink]="[userLink]">
           <span class="fa fa-plane" size="2x"></span>
           {{ userLink }}
         </button>
