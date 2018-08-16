@@ -18,15 +18,15 @@
               "polyfills": "src/polyfills.ts",
               "assets": [
                 "src/assets",
-                "src/favicon.ico"
+                "src/favicon.ico",
+                "src/assets/css/indigo-pink.css"
+
               ],
               "styles": [
                 "src/styles.css",
-                "node_modules/font-awesome/css/font-awesome.css",                
-                "~@angular/material/prebuilt-themes/deeppurple-amber.css",
-                "../node_modules/bootstrap/dist/css/bootstrap.css",
-                "../node_modules/font-awesome/css/font-awesome.css",
-                "styles.css"
+                "./node_modules/font-awesome/css/font-awesome.css",                
+                "./node_modules/bootstrap/dist/css/bootstrap.css",
+                "src/assets/css/indigo-pink.css"
               ],
               "scripts": []
             },
@@ -75,12 +75,6 @@
               "polyfills": "src/polyfills.ts",
               "tsConfig": "src/tsconfig.spec.json",
               "scripts": [],
-              "styles": [
-                "src/styles.css",
-                "./node_modules/font-awesome/css/font-awesome.css",                
-                "./node_modules/bootstrap/dist/css/bootstrap.css",
-                "styles.css"
-              ],
               "assets": [
                 "src/assets",
                 "src/favicon.ico"
