@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { GUEST } from "../../_models/guest";
 import { GuestService } from "../../_services/guests.service";
@@ -19,7 +19,7 @@ export class RelatedUsersComponent implements OnInit {
   public guests: GUEST[];
   public guides: GUIDE[];
   public currentUser: User;
-  @Input() interests: any;
+  @Input() SelectedInterests: any;
 
   constructor(
     public userService: UserService,
@@ -28,7 +28,7 @@ export class RelatedUsersComponent implements OnInit {
   ) { 
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
   }
-
+  
   ngOnInit() {
     const guests = this.guestService.getGuests();
     const guides = this.guideService.getGuides();

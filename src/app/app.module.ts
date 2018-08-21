@@ -41,6 +41,9 @@ import { AppHeaderComponent } from "./app-header/app-header.component";
 import { AppFooterComponent } from "./app-footer/app-footer.component";
 import { RelatedUsersComponent } from "./home/related-users/related-users.component";
 import { UserInterestsComponent } from "./home/user-interests/user-interests.component";
+import { SelectedInterestServiceService } from "./_services/selected-interest.service";
+
+
 
 @NgModule({
   imports: [
@@ -93,6 +96,7 @@ import { UserInterestsComponent } from "./home/user-interests/user-interests.com
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     GuestService,
     GuideService,
+    SelectedInterestServiceService,
 
     // provider used to create fake backend
     fakeBackendProvider

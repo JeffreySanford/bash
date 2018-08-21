@@ -38,6 +38,7 @@ import {
 })
 
 export class HomeComponent implements OnInit {
+  @Output() SelectedInterests = new EventEmitter();
   firstName: any;
   currentUser: User;
   user: User[];
@@ -52,7 +53,7 @@ export class HomeComponent implements OnInit {
   receiveMessage($event: any) {
     let SelectedInterests = $event;
     this.interests = SelectedInterests;
-    
+    this.SelectedInterests.emit(this.interests);
   }
 
   ngOnInit() {

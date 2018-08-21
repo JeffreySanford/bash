@@ -6,8 +6,8 @@
     "url": "https://github.com/JeffreySanford/bash"
   },
   "scripts": {
-    "build": "webpack --mode production -ssl true",
-    "start": "webpack-dev-server --mode development --open --ssl true"
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
   },
   "license": "MIT",
   "dependencies": {
