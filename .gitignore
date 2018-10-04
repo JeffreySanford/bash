@@ -39,3 +39,4 @@ typings
 
 # Generated files
 dist
+package-lock.json
