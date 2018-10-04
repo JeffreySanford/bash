@@ -9,12 +9,14 @@ import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
 
-@ViewChild('search')
 @Component({
   selector: 'app-agm',
   templateUrl: './agm.component.html',
   styleUrls: ['./agm.component.css']
 })
+
+
+
 export class AgmComponent implements OnInit {
   public latitude: number;
   public longitude: number;

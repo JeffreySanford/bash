@@ -11,7 +11,7 @@ import { GUIDE } from "../../_models/guide";
 import { GuideService } from "../../_services/guides.service";
 
 import { USER } from "../../_models/user";
-import { UserService } from "../../_services";
+import { UserService } from "../../_services/user.service";
 
 import { SelectedInterestService } from "../../_services/selected-interest.service"
 
