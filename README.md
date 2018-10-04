@@ -6,6 +6,24 @@ PM2 is being used to host on the digital ocean development server.  Building the
 
 pm2 start http-server --name BASH -- -p 4200 -d false
 
+This worked for development under production but isn't initializing the config namespace which is initialize through webpack using localstorage.
+
+use this command for the pm2 startup script:
+
+[] use 'npm build' to build in new changes and create the dist folder
+
+pm2 start npm --name "{app_name}" -- run {script_name}
+
+pm2 start npm --name BASH -- run start
+
+
+###  This should be pasrt of the production build process:
+
+pm2 deploy production setup
+pm2 deploy production update
+pm2 deploy production exec "npm config set {app name}:{env variable} {env variable value}" // beauty!
+pm2 deploy production exec 'pm2 start npm --name "{app name}" -- start'
+pm2 deploy production exec 'pm2 save'
 
 
 # angular-6-registration-login-example
