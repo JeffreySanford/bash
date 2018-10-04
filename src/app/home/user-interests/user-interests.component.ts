@@ -6,11 +6,13 @@ import {
   Renderer2
 } from "@angular/core";
 
-import { User } from "../../_models/user";
+import { USER } from "../../_models/user";
 
 import { UserService } from "../../_services/user.service";
 import { AlertService } from "../../_services/alert.service";
-import { SelectedInterestServiceService } from "../../_services/selected-interest.service";
+
+import { INTEREST } from "../../_models/interests";
+import { SelectedInterestService } from "../../_services/selected-interest.service";
 
 @Component({
   selector: "app-user-interests",
@@ -18,58 +20,78 @@ import { SelectedInterestServiceService } from "../../_services/selected-interes
   styleUrls: ["./user-interests.component.css"]
 })
 export class UserInterestsComponent implements OnInit {
-  currentUser: User = JSON.parse(localStorage.getItem("currentUser"));
+  public currentUser: USER;
   @Output()
   SelectedInterests = new EventEmitter();
-  users: User[] = [];
+  users: USER[] = [];
   event: MouseEvent;
-  interests: any;
-
-  mouseenter(event: MouseEvent) {
-    this.renderer2.addClass(event.target, "mat-elevation-z5");
-  }
-
-  mouseleave(event: MouseEvent) {
-    this.renderer2.removeClass(event.target, "mat-elevation-z5");
-  }
-
-  sendMessage() {
-    this.SelectedInterests.emit(this.currentUser.interests);
-  }
+  interests: Array<string>;
+  interest: string;
+  availableInterests: Array<String>;
+  selection: string;
 
   constructor(
     private userService: UserService,
     private renderer2: Renderer2,
     private alertService: AlertService,
-    private interestsService: SelectedInterestServiceService
+    private interestsService: SelectedInterestService
   ) {
-    this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    this.currentUser.interests = [];
+    this.currentUser = this.userService.getUser();
+    this.availableInterests = ["food", "shelter", "tourism", "travel"];
+  }
+
+  mouseEnter(event: MouseEvent) {
+    this.renderer2.addClass(event.target, "mat-elevation-z5");
+  }
+
+  mouseLeave(event: MouseEvent) {
+    this.renderer2.removeClass(event.target, "mat-elevation-z5");
+  }
+
+  sendMessage() {
+    this.SelectedInterests.emit(this.interests);
+  }
+
+  addInterest(selection: string) {
+    this.interestsService.setInterest(selection);
+    this.interests = this.interestsService.getInterests();
+    let alert =
+      "Added interest " +
+      selection +
+      " and updated the service. User interests array is currently: " +
+      this.interests;
+    this.alertService.info(alert);
+  }
+
+  removeInterest(selection: string) {
+
+    this.interestsService.removeInterest(selection);
+    this.interests = this.interestsService.getInterests();
+    
+    let alert =
+      "Removed interest " +
+      selection +
+      " and updated the service. User interests array is currently: " +
+      this.interests;
+    this.alertService.info(alert);
   }
 
   interestSelection(element: HTMLInputElement): void {
-    let interests = this.currentUser.interests;
-    let present = interests.includes(element.value);
-    if (present === false) {
-      // add the interest
-      interests.push(element.value);
-      this.interestsService.setData(interests);
-      debugger
-      this.alertService.info(
-        "Added interest " + element.value + " and updated the service."
-      );
+    
+    let selection = element.value;
+    let interests = this.interestsService.getInterests();
+    let index = interests.indexOf(selection);
+
+    if (index === -1) {
+      this.addInterest(selection);
     } else {
-      let index = interests.indexOf(element.value);
-      interests.splice(index, 1);
-      this.interestsService.setData(interests);
-      this.alertService.info(
-        "Removed interest " + element.value + " and updated the service."
-      );
+      this.removeInterest(selection);
     }
     this.sendMessage();
   }
 
   ngOnInit() {
-    this.interests = ["food", "shelter", "tourism", "travel"];
+    this.currentUser.interests = this.interestsService.getInterests();
+    
   }
 }

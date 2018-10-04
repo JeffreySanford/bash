@@ -18,11 +18,11 @@ export class GuideService {
   /** GET heroes from the server */
   getGuides() {
     const guides = [
-      { id: 36, name: 'RubberMan' },
-      { id: 54, name: 'Dynama' },
-      { id: 93, name: 'Dr IQ' },
-      { id: 23, name: 'Magma' },
-      { id: 10, name: 'Tornado' }
+      { id: 36, name: 'Frank', interests: ["food", "travel"] },
+      { id: 54, name: 'Dynama', interests: ["travel"] },
+      { id: 93, name: 'Dr IQ', interests: ["travel"] },
+      { id: 23, name: 'Magma', interests: ["travel", "tourism"] },
+      { id: 10, name: 'Tornado',interests: ["tourism"] }
     ];
 
     return guides;

@@ -1,7 +1,13 @@
-﻿import { Component, OnInit, Renderer2, Output, EventEmitter} from "@angular/core";
-import { first } from 'rxjs/operators';
-import { User } from '../_models';
-import { UserService } from '../_services'
+﻿import { Component, OnInit, Renderer2 } from "@angular/core";
+import { first } from "rxjs/operators";
+import { USER } from "../_models";
+import { UserService } from "../_services";
+
+import { INTEREST } from "../_models/interests";
+import { SelectedInterestService } from "../_services/selected-interest.service";
+
+import { GuestService } from "../_services/guests.service";
+import { GuideService } from "../_services/guides.service";
 
 import {
   trigger,
@@ -36,34 +42,88 @@ import {
     ])
   ]
 })
-
 export class HomeComponent implements OnInit {
-  @Output() SelectedInterests = new EventEmitter();
   firstName: any;
-  currentUser: User;
-  user: User[];
+  currentUser: USER;
+  user: USER[];
   users$: any;
-  interests: any;
-  
+  interests: Array<string>;
+  guests: any;
+  guides: any;
+  name: string;
+
   constructor(
-    private userService: UserService, 
-    private renderer2: Renderer2) {
+    public guestService: GuestService,
+    public guideService: GuideService,
+    private userService: UserService,
+    private interestsService: SelectedInterestService,
+    private renderer2: Renderer2
+  ) {
+    this.currentUser = this.userService.getUser();
+    this.interests = this.interestsService.getInterests();
   }
 
   receiveMessage($event: any) {
     let SelectedInterests = $event;
-    this.interests = SelectedInterests;
-    this.SelectedInterests.emit(this.interests);
-  }
 
-  ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem("currentUser"));
-    let users$ = this.loadAllUsers();
+    // Guests
+    let newGuests = [];
+    let newGuides = [];
+
+    for (let i = 0; i < SelectedInterests.length; i++) {
+      let guests = this.guests;
+      let guides = this.guides;
+
+      for (let j = 0; j < guests.length; j++) {
+
+        let guestInterest = this.guests[j].interests;
+        if (guestInterest.indexOf(SelectedInterests[i]) > -1) {
+          if (newGuests.indexOf(guests[j]) === -1) {
+            newGuests.push(guests[j]);
+          } 
+        }
+      }
+
+      for (let k = 0; k < guides.length; k++) {
+        let guideInterest = this.guides[k].interests;
+        if (guideInterest.indexOf(SelectedInterests[i]) > -1) {
+          if (newGuides.indexOf(guests[k]) === -1) {
+            newGuides.push(guests[k]);
+          }
+        }
+      }
+    }
+
+    //  Check for removing an interest and remove the corresponding Guests and Guides
+    if (SelectedInterests.length === 0) {
+      this.guests = this.guestService.getGuests();
+      this.guides = this.guideService.getGuides();
+    }
+
+    if (newGuests.length > 0) {
+      this.guests = newGuests;
+    }
+
+    if (newGuides.length > 0) {
+      this.guides = newGuides;
+    }
   }
 
   private loadAllUsers() {
-    this.userService.getAll().pipe(first()).subscribe(users => { 
-        this.users$ = users; 
-    });
+    this.userService
+      .getAll()
+      .pipe(first())
+      .subscribe(users => {
+        this.users$ = users;
+      });
+  }
+
+  ngOnInit() {
+    this.currentUser = this.userService.getUser();
+    this.guests = this.guestService.getGuests();
+    this.guides = this.guideService.getGuides();
+    // let guests = this.guests;
+    // let guides = this.guides;
+    this.users$ = this.loadAllUsers();
   }
 }

@@ -23,8 +23,8 @@ ul {
 .btn-circle {
   border: 1px solid purple;
   border-radius: 50%;
-  width: 3.5em !important;
-  height: 3.5em !important;
+  width: 3em !important;
+  height: 3em !important;
   background-color: rgba(255, 0, 255, 0.5);
   display: inline-block;
   width: 10em;
@@ -36,12 +36,12 @@ ul {
 
 .button-label {
   text-align: center;
-  width: 5.5em;
+  width: 4.5em;
   border: 1px solid magenta;
   font-size: 0.5em;
   color: black;
   margin-top: 0em;
-  margin-left: .15em;
+  margin-left: .1em;
   margin-bottom: .5em;
 }
 
@@ -55,7 +55,7 @@ ul {
 }
 
 .btn-circle i {
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 1px auto 0 1px;
   text-align: center;
   color: rgba(128, 0, 0, 0.5);

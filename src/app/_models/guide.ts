@@ -1,5 +1,5 @@
 export class GUIDE {
-  id: number;
+  id?: number;
   name: string;
   // longitude: number;
   // latitude: number;

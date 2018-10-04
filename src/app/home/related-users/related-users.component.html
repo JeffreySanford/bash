@@ -1,9 +1,9 @@
 <div>
-  <div class="row">
+  <div class="row" (SelectedInterests)="receiveMessage($event)">
     <ul>
       <p style="margin-top: -1em;" class="content-descriptor">Similar guests</p>
       <li class="col-lg-2 col-md-3 col-sm-4 col-xs-4 pull-left" *ngFor="let guest of guests; let i = index;" style="min-width: 3em;margin-left: .5em;">
-        <div *ngIf="guest.interests !== SelectedInterests">
+        <div>
           <a routerLink="/guest/{{guest.id}}">
             <div class="btn-circle mat-elevation-z8">
               <i class="fa fa-user"></i>
@@ -11,7 +11,7 @@
             </div>
             <div class="button-label mat-elevation-z4">{{ guest.name }}</div>
           </a>
-  
+          <!-- <fa-icon [icon]="['fas', 'coffee']" size="xs"></fa-icon> -->
         </div>
       </li>
     </ul>

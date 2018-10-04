@@ -5,13 +5,12 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './selected-guide.component.html',
   styleUrls: ['./selected-guide.component.css']
 })
+
 export class SelectedGuideComponent implements OnInit {
 
-  @Input() ChildInterests: any
   constructor() { }
 
   ngOnInit() {
-    let ChildInterests = this.ChildInterests;
   }
 
 }

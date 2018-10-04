@@ -1,8 +1,8 @@
 export class GUEST {
-  id: any;
+  id?: any;
   name: string;
   longitude?: number;
   latitude?: number;
-  interests: string[];
+  interests: Array<string>;
   // profile_video: getProfileVideo();
 }

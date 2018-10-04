@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
 import { AlertService } from '../_services/alert.service';
-import { User } from '../_models/user';
+import { USER } from '../_models/user';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ import { User } from '../_models/user';
 })
 
 export class AppHeaderComponent implements OnInit {
-  public currentUser: User;
+  public currentUser: USER;
   public firstName: String;
   userLinks: any;
   links: any;
@@ -19,13 +19,12 @@ export class AppHeaderComponent implements OnInit {
     public userService: UserService,
     public alertService: AlertService
   ) {
-    this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    this.currentUser = this.userService.getUser();
     this.firstName = this.currentUser.firstName;
   }
 
   ngOnInit() {
-    this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    this.firstName = this.currentUser.firstName;
+
     let firstName = this.currentUser.firstName;
 
     let userLinks = ["/login", "/register", "/account", "/settings"];

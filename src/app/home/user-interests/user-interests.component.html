@@ -1,12 +1,19 @@
 <div class="user-interests">
-  <ul>
-    <li *ngFor="let interest of interests; let i = index;">
-      <div (change)="interestSelection(SelectedInterests)" class="checkboxes" (mouseenter)='mouseenter($event)' (mouseleave)="mouseleave($event)">
-        <label>
-          <span class="fa fa-bus interest-icon"></span>
-          <input #SelectedInterests type="checkbox" [value]="interest" [class.selected]="SelectedInterests.checked"> {{ interest }}
-        </label>
-      </div>
-    </li>
-  </ul>
-</div>
+    <ul>
+      <li *ngFor="let interest of availableInterests; let i = index;">
+        <div
+          (mouseenter)="mouseEnter($event)"
+          (mouseleave)="mouseLeave($event)"
+          (change)="interestSelection(SelectedInterests)" class="checkboxes">
+          <label>
+            <span class="fa fa-bus interest-icon"></span>
+            <input 
+              #SelectedInterests type="checkbox" 
+              [value]="interest" 
+              [class.selected]="SelectedInterests.checked">
+              {{ interest }}
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
